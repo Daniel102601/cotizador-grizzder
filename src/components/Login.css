@@ -1,0 +1,195 @@
+/* Login Grizzder Technology — diseño premium */
+:root {
+  --login-navy: #101d33;
+  --login-navy-deep: #091322;
+  --login-blue: #0757f9;
+  --login-gold: #c6a15b;
+  --login-text: #172338;
+  --login-muted: #718096;
+  --login-border: #dce4ef;
+}
+
+/* Selector limitado al formulario de acceso: no afecta otros módulos */
+main:has(#correo):has(#contrasena) {
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 32px 20px;
+  color: var(--login-text);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(7, 87, 249, .22), transparent 38%),
+    radial-gradient(ellipse at 90% 85%, rgba(198, 161, 91, .12), transparent 35%),
+    linear-gradient(145deg, var(--login-navy-deep), var(--login-navy) 65%, #142744);
+}
+
+/* Marca decorativa */
+main:has(#correo):has(#contrasena)::before {
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  top: -180px;
+  right: -100px;
+  border: 1px solid rgba(198, 161, 91, .25);
+  border-radius: 50%;
+  box-shadow: 0 0 0 28px rgba(198, 161, 91, .025),
+              0 0 0 58px rgba(198, 161, 91, .02);
+  pointer-events: none;
+}
+
+main:has(#correo):has(#contrasena) h1 {
+  width: min(100%, 420px);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 34px 36px 8px;
+  color: #fff;
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  color: var(--login-navy);
+  font-size: clamp(25px, 4vw, 31px);
+  font-weight: 800;
+  letter-spacing: -.045em;
+  text-align: center;
+}
+
+main:has(#correo):has(#contrasena) > p {
+  width: min(100%, 420px);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 8px 36px 24px;
+  color: #69778b;
+  background: #fff;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Tarjeta del formulario */
+main:has(#correo):has(#contrasena) form {
+  width: min(100%, 420px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 0 36px 36px;
+  background: #fff;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .28);
+  position: relative;
+}
+
+main:has(#correo):has(#contrasena) form label {
+  margin-top: 10px;
+  color: #34435a;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .015em;
+}
+
+main:has(#correo):has(#contrasena) form input {
+  width: 100%;
+  min-height: 46px;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid var(--login-border);
+  border-radius: 10px;
+  outline: none;
+  color: var(--login-text);
+  background: #fbfcfe;
+  font: inherit;
+  font-size: 14px;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+main:has(#correo):has(#contrasena) form input::placeholder {
+  color: #a0aaba;
+}
+
+main:has(#correo):has(#contrasena) form input:hover {
+  border-color: #b8c8e1;
+  background: #fff;
+}
+
+main:has(#correo):has(#contrasena) form input:focus {
+  border-color: #5d91ff;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(7, 87, 249, .10);
+}
+
+main:has(#correo):has(#contrasena) form button[type="submit"] {
+  width: 100%;
+  min-height: 47px;
+  margin-top: 20px;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  background: linear-gradient(135deg, #1264ff, #0648d8);
+  box-shadow: 0 8px 18px rgba(7, 87, 249, .22);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+
+main:has(#correo):has(#contrasena) form button[type="submit"]:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+  box-shadow: 0 11px 23px rgba(7, 87, 249, .3);
+}
+
+main:has(#correo):has(#contrasena) form button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+main:has(#correo):has(#contrasena) form button[type="submit"]:disabled {
+  opacity: .65;
+  cursor: wait;
+  transform: none;
+}
+
+main:has(#correo):has(#contrasena) p[role="alert"] {
+  width: auto;
+  margin: 8px 0 0;
+  padding: 11px 12px;
+  border: 1px solid #fecaca;
+  border-radius: 9px;
+  color: #b42318;
+  background: #fff5f5;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 480px) {
+  main:has(#correo):has(#contrasena) {
+    padding: 20px 14px;
+  }
+
+  main:has(#correo):has(#contrasena) h1 {
+    padding: 28px 22px 8px;
+  }
+
+  main:has(#correo):has(#contrasena) > p {
+    padding: 8px 22px 22px;
+  }
+
+  main:has(#correo):has(#contrasena) form {
+    padding: 0 22px 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main:has(#correo):has(#contrasena) *,
+  main:has(#correo):has(#contrasena) *::before,
+  main:has(#correo):has(#contrasena) *::after {
+    transition: none !important;
+  }
+}

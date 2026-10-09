@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { supabase } from "../lib/supabase";
+import "./Login.css";
 
 function Login({ onLogin }) {
   const [correo, setCorreo] = useState("");
